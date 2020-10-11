@@ -4,12 +4,10 @@ import TextField from '@material-ui/core/TextField';
 import MuiAlert from '@material-ui/lab/Alert';
 import Snackbar from '@material-ui/core/Snackbar';
 import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import Container from '@material-ui/core/Container';
-import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux'
 import { ACTION_TYPE } from '../utils/constants'
 import Api from '../Api'
@@ -67,7 +65,7 @@ export default function Login() {
             }
         })
     }
-    return <div className="login">
+    return <div className="login" data-testid="login">
         <Container component="main" maxWidth="xs">
             <Snackbar 
                 anchorOrigin={{ vertical: 'top', horizontal: 'center' }}

@@ -15,7 +15,7 @@ export default function Board() {
             payload: id
         })
     }
-    return <div className="board">
+    return <div className="board" data-testid="board">
         <h1>kanban board</h1>
         <div className="item-container">
             <Item select={handleSelect} title="Backlog" taskList={backlog}></Item>

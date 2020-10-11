@@ -45,14 +45,14 @@ export default function Control() {
             payload: selectId
         })
     }
-    return <div className="control">
+    return <div className="control" data-testid="control">
         <h1>Controls</h1>
         <div className="create">
             <input value={taskName} onChange={handleInputValueChange} placeholder="New task name" type="text"/>
             <button onClick={handleCreateTask}>Create</button>
         </div>
         <div className="edit">
-            <input onChange={()=>{}} value={selectName} placeholder="Click on an existing task" type="text" />
+            <input data-testid="selectInput" onChange={()=>{}} value={selectName} placeholder="Click on an existing task" type="text" />
             <button onClick={handleMoveBackTask}>Move back</button>
             <button onClick={handleMoveForwardTask}>Move forward</button>
             <button onClick={handleDeleteTask}>Delete</button>

@@ -1,7 +1,7 @@
 import React from 'react'
 import './item.scss'
 export default function Item({title, taskList, select}) {
-    return <div className="item">
+    return <div className="item" data-testid="item">
         <h2>{title}</h2>
         <div className="task-list">
             {taskList.map((task,i) => {

@@ -1,15 +1,9 @@
-import {createStore, applyMiddleware} from 'redux'
-import { composeWithDevTools } from 'redux-devtools-extension';
-import logger from 'redux-logger'
+import { createStore } from 'redux'
 import { ACTION_TYPE } from '../utils/constants'
 
 import reducer from './reducer'
-console.log(111)
 const store = new createStore(
     reducer,
-    composeWithDevTools(
-        applyMiddleware(logger)
-    )
 )
 
 store.dispatch({

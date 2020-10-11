@@ -6,8 +6,8 @@ services:
         command: "npm run start"
         build:
             context: "./backend"
-        volumes:
-            - ./backend/:/app
+        # volumes:
+        #     - ./backend/:/app
         networks:
             - gate-tier
             - back-tier
@@ -21,8 +21,8 @@ services:
             BASE_URL: ""
         build:
             context: "./frontend"
-        volumes:
-            - ./frontend/:/root/frontend/
+        # volumes:
+        #     - ./frontend/:/app
         networks:
             - gate-tier
 
