@@ -1,6 +1,6 @@
 # Frontend
 
-## Install dependences Command
+## Install Dependence Command
 
 ```bash
 yarn

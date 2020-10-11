@@ -9,8 +9,8 @@ docker-compose up --build
 ## local visit
 
 ```bash
-frontend: http://localhost:80
-backend: http://localhost:8080
+frontend: http://localhost:9001
+backend: http://localhost:9002
 ```
 
 ## online visit
