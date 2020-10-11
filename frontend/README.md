@@ -1,5 +1,11 @@
 # Frontend
 
+## Install dependences Command
+
+```
+yarn
+```
+
 ## Run Command
 
 ```
