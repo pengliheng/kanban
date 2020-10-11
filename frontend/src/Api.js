@@ -1,7 +1,7 @@
 import Axios from 'axios'
 
 const axios = Axios.create({
-    baseURL: `//${document.domain}:8080`,
+    baseURL: `//${document.domain}:9002`,
     timeout: 5000
 });
 export default {

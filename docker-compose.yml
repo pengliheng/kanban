@@ -4,6 +4,8 @@ services:
     backend:
         restart: always
         command: "npm run start"
+        environment: 
+            PORT: "8080"
         build:
             context: "./backend"
         # volumes:
@@ -17,7 +19,7 @@ services:
         command: "yarn run prod"
         environment: 
             PORT: "80"
-            NODE_ENV: "devemopment"
+            NODE_ENV: "development"
             BASE_URL: ""
         build:
             context: "./frontend"
@@ -36,8 +38,8 @@ services:
             - ./nginx/conf.d/:/etc/nginx/conf.d/
             - ./nginx:/var/log/nginx/
         ports:
-            - "80:80"
-            - "8080:8080"
+            - "9001:80"
+            - "9002:8080"
 
 networks:
     gate-tier:

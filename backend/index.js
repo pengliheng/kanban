@@ -1,16 +1,14 @@
-const Koa = require('koa');
-const cors = require('@koa/cors');
-const Router = require('koa-router');
-const app = new Koa();
-const router = new Router();
-const port = process.env.PORT || 8080
-router.post('/login', (ctx, next) => {
-  ctx.body = {}
-});
+const express = require('express')
+const app = express()
+const cors = require('cors')
+const port = process.env.PORT || 9002
 
-app
-  .use(cors())
-  .use(router.routes())
-  .use(router.allowedMethods());
+app.use(cors())
 
-app.listen(8080);
+app.post('/login', function (req, res) {
+  res.send({})
+})
+
+app.listen(port, () => {
+  console.log(`listening at http://localhost:${port}`)
+})
