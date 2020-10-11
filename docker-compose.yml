@@ -1,0 +1,57 @@
+version: "3.7"
+
+services:
+    # mongodb:
+    #     logging:
+    #         driver: none
+    #     image: mongo
+    #     restart: always
+    #     environment:
+    #         MONGO_INITDB_ROOT_USERNAME: root
+    #         MONGO_INITDB_ROOT_PASSWORD: ewqewq
+    #     volumes:
+    #         - ./mongodb:/data/db
+    #     networks:
+    #         - back-tier
+
+    backend:
+        restart: always
+        command: "npm run start"
+        build:
+            context: "./backend"
+        volumes:
+            - ./backend/:/app
+        networks:
+            - gate-tier
+            - back-tier
+
+    frontend:
+        restart: always
+        command: "yarn run prod"
+        environment: 
+            PORT: "80"
+            NODE_ENV: "devemopment"
+            BASE_URL: ""
+        build:
+            context: "./frontend"
+        volumes:
+            - ./frontend/:/root/frontend/
+        networks:
+            - gate-tier
+
+    nginx:
+        restart: always
+        build:
+            context: "./nginx"
+        networks:
+            - gate-tier
+        volumes:
+            - ./nginx/conf.d/:/etc/nginx/conf.d/
+            - ./nginx:/var/log/nginx/
+        ports:
+            - "80:80"
+            - "8080:8080"
+
+networks:
+    gate-tier:
+    back-tier:

@@ -1,0 +1,21 @@
+.item {
+    padding: 20px;
+    flex: 0 0 calc(25% - 10px);
+    box-sizing: border-box;
+    background-color: #f2f1f1;
+    .task-list {
+        display: flex;
+        flex-direction: column;
+        .task {
+            border: 2px solid #ccc;
+            padding: 10px;
+            cursor: pointer;
+            &:hover {
+                border-color: yellow;
+            }
+        }
+        .task+.task {
+            margin-top: 10px;
+        }
+    }
+}

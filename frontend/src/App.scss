@@ -1,0 +1,15 @@
+.App {
+  width: 1080px;
+  overflow-x: auto;
+  margin: auto;
+  height: 100vh;
+  input+button {
+    margin-left: 10px;
+  }
+  button+button {
+    margin-left: 20px;
+  }
+  h1 {
+    text-align: center;
+  }
+}
